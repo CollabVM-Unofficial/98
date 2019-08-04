@@ -76,6 +76,16 @@ function Minesweeper(){
 	});
 	return new Task($win);
 }
+function Discord(){
+	var $win = new $IframeWindow({
+		src: "programs/discord/index.html",
+		icon: "discord",
+		title: "Discord",
+		innerWidth: 280,
+		innerHeight: 320
+	});
+	return new Task($win);
+}
 
 function SoundRecorder(file_path){
 	// TODO: DRY the default file names and title code (use document.title of the page in the iframe, in $IframeWindow)
@@ -340,6 +350,12 @@ add_icon_not_via_filesystem({
 	title: "Minesweeper",
 	icon: "minesweeper",
 	open: Minesweeper,
+	shortcut: true
+});
+add_icon_not_via_filesystem({
+	title: "Discord",
+	icon: "discord",
+	open: Discord,
 	shortcut: true
 });
 add_icon_not_via_filesystem({
